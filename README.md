@@ -1,5 +1,6 @@
 # DIR-ing
 
-This is a README file, it is written in _Markdown_.
+Supplemental notes on what we're learning in class: Python, HTML, CSS, JavaScript, Node,
+React & Redux
 
 
