@@ -110,8 +110,6 @@ numbah = 8
 string_num = str(numbah)
 print(string_num)
 
-
-
 # formatting for floating points
 print(round(13.3394028573829, 2))
 num = 13.9491374288079071
@@ -124,3 +122,4 @@ print("%.2f" % round(num,2))
 print("{0:.2f}".format(num))
 print("{0:.4f}".format(round(num,4)))
 print("{0:.15f}".format(round(num,2)))
+
