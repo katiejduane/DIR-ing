@@ -132,10 +132,27 @@ for i in range(11, 21, 2):
 #     if x == 3:
 #         break
 
-times = int(input("How many times do I have to tell you? "))
+# times = int(input("How many times do I have to tell you? "))
 
-for time in range(times):
-	print("CLEAN UP YOUR ROOM!")
-	if time >= 3:
-		print("do you even listen anymore?")
-		break
+# for time in range(times):
+# 	print("CLEAN UP YOUR ROOM!")
+# 	if time >= 3:
+# 		print("do you even listen anymore?")
+# 		break
+
+# # print a square
+# width_count = 1
+# while width_count < 5:
+#     print(' *' * 5)
+#     width_count += 1
+
+
+# coin counter
+coins = -1
+answer = 'yes'
+while answer == 'yes':
+    coins += 1
+    print('you have %d coins' % coins)
+    answer = input('do you want another? ')
+print('bye!')
+
