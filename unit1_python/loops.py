@@ -167,7 +167,7 @@ for i in range(11, 21, 2):
 #     count += 1
 #     stars += '**'
 
-# centered triangle v2
+# # centered triangle v2
 # triangleHt = int(input('enter a number less than 14: '))
 # count = 0
 # stars = '*'
@@ -179,51 +179,47 @@ for i in range(11, 21, 2):
 #     stars += '**'
 
 
-plain = "abcdefghijklmnopqrstuvwxyz"
-cipher = "bcdefghijklmnopqrstuvwxyza"
+# # The general approach to the Caesar Cipher problem:
+# # For each letter in our message, look up the index in the alphabet (represented by a string).
+# # Then, add 13 to that index.
+# # If the value is greater than or equal to 26, then subtract 26 (to start over at 'a').
 
-# The general approach to the Caesar Cipher problem:
-# For each letter in our message, look up the index in the alphabet (represented by a string).
-# Then, add 13 to that index.
-# If the value is greater than or equal to 26, then subtract 26 (to start over at 'a').
+# encoded_message = "lbh zhfg hayrnea jung lbh unir yrnearq"
+# # encoded_message = input("enter the messge here: ")
 
+# # We will use a string that contains the alphabet.
+# # This lets us use the `in` operator to see if a character in our message is a letter.
+# # Also, we can ask for the `.index` of a letter.
+# alphabet = "abcdefghijklmnopqrstuvwxyz"
 
-encoded_message = "lbh zhfg hayrnea jung lbh unir yrnearq"
-# encoded_message = input("enter the messge here: ")
+# rotate_by = 13  # We're doing ROT 13
 
-# We will use a string that contains the alphabet.
-# This lets us use the `in` operator to see if a character in our message is a letter.
-# Also, we can ask for the `.index` of a letter.
-alphabet = "abcdefghijklmnopqrstuvwxyz"
+# # Create a variable with an empty string that we'll add decoded letters to.
+# decoded_message = ""
 
-rotate_by = 13  # We're doing ROT 13
+# # Iterate through the characters in our message.
+# i = 0
+# while i < len(encoded_message):
+#     letter = encoded_message[i]
+#     i = i + 1
+#     # Anything that's not in the alphabet, just pass through to the decoded_message.
+#     if letter not in alphabet:
+#         decoded_message = decoded_message + letter
+#     else:
+#         # Grab the index in the alphabet.
+#         index_in_alphabet = alphabet.index(letter)
 
-# Create a variable with an empty string that we'll add decoded letters to.
-decoded_message = ""
+#         # Add 13 (or whatever the amount of rotation is.)
+#         new_index = index_in_alphabet + rotate_by
 
-# Iterate through the characters in our message.
-i = 0
-while i < len(encoded_message):
-    letter = encoded_message[i]
-    i = i + 1
-    # Anything that's not in the alphabet, just pass through to the decoded_message.
-    if letter not in alphabet:
-        decoded_message = decoded_message + letter
-    else:
-        # Grab the index in the alphabet.
-        index_in_alphabet = alphabet.index(letter)
+#         # See if we've exceeded the length of the alphabet.
+#         if new_index >= len(alphabet):
 
-        # Add 13 (or whatever the amount of rotation is.)
-        new_index = index_in_alphabet + rotate_by
+#             # Shift back to the beginning of the alphabet, if necessary.
+#             new_index = new_index - len(alphabet)
 
-        # See if we've exceeded the length of the alphabet.
-        if new_index >= len(alphabet):
+#         # Add the rotated letter to decoded_message..
 
-            # Shift back to the beginning of the alphabet, if necessary.
-            new_index = new_index - len(alphabet)
+#         decoded_message = decoded_message + alphabet[new_index]
 
-        # Add the rotated letter to decoded_message..
-
-        decoded_message = decoded_message + alphabet[new_index]
-
-print(decoded_message)
+# print(decoded_message)
