@@ -100,6 +100,20 @@ def sum_even_fib():
     pass
 
 
+# 10
+# Write a function called average_pair. given a list of SORTED (ie: 1,2,3) integers and a target avg, 
+# determine if there is a pair of values in the array where the average of the pair equals the target avg.
+# There may be more than one pair that matched the target avg.
+
+# examples:
+# average_pair([1,2,3]. 2.5) returns TRUE
+# average_pair([-1,0,3,4,5,6], 4.1) returns FALSE
+
+def average_pair(list, avg):
+    pass
+
+
+
 
 # ======================================= SOLUTIONS =============================================
 
@@ -116,6 +130,7 @@ def sum_even_fib():
 
 # def single_letter_count(string, letter):
 #     return string.lower().count(letter.lower())
+
 
 # MULTIPLE LETTER COUNT --------------------------------->
 # def multiple_letter_count(str):
@@ -146,20 +161,22 @@ def sum_even_fib():
 
 
 # IS PALINDROME --------------------------------->
+# test_string = input('type any word: ')
 # def is_palindrome(str):
 #     if str[::1] == str[::-1]:
 #         return True
 #     else:
 #         return False
 
-# print(is_palindrome('hannah'))
+# print(is_palindrome(test_string))
 # print(is_palindrome('jason'))
 
-def is_palindrome(string):
-    stripped = string.replace(" ", "")
-    print(stripped)
-    # return stripped == stripped[::-1]
-is_palindrome('hannah')
+# def is_palindrome(string):
+#     stripped = string.replace(" ", "")
+#     return stripped == stripped[::-1]
+
+# is_palindrome(test_string)
+
 
 # FREQUENCY --------------------------------->
 # def frequency(list, letter):
@@ -174,6 +191,7 @@ is_palindrome('hannah')
 # def frequency(collection, searchTerm):
 #     return collection.count(searchTerm)
 
+
 # MULTIPLY EVENS --------------------------------->
 # def multiply_even_numbers(list):
 #     product = 1
@@ -184,6 +202,7 @@ is_palindrome('hannah')
 
 # print(multiply_even_numbers([2, 3, 4, 5]))
 
+
 # CAPITALIZE --------------------------------->
 # def capitalize(string):
 #     cap_string = string[0].upper() + string[1::]
@@ -191,8 +210,8 @@ is_palindrome('hannah')
 
 # print(capitalize('katie'))
 
-# SUM ODDS  DIVISBLE BY 3 OR 5 --------------------------------->
 
+# SUM ODDS  DIVISBLE BY 3 OR 5 --------------------------------->
 # def sum_odds_by_three_five(num):
 #     sum = 0
 #     for i in range(0, num):
@@ -230,3 +249,36 @@ is_palindrome('hannah')
 #     return sum
 
 # print(sum_even_fib(4000000))
+
+
+# AVERAGE PAIRS --------------------------------->
+# function averagePair(array, avg){
+#     let i = 0
+#     let j = array.length - 1
+#     while(i < j){
+#         let average = ((array[i] + array[j]) / 2)
+#         if(average < avg){
+#             i++
+#         }else if(average > avg){
+#             j--
+#         }else if(average == avg){
+#             return true
+#         }
+#     }
+#     return false
+# }
+
+# def average_pair(list, avg):
+#     i = 0
+#     j = len(list) - 1
+#     while i < j:
+#         average = (list[i] + list[j]) / 2
+#         if average < avg:
+#             i += 1
+#         elif average > avg:
+#             j -= 1
+#         elif average == avg:
+#             return True
+#     return False
+
+# print(average_pair([1,2,3,4,5,6,7,8,9], 4))
