@@ -140,19 +140,40 @@ for i in range(11, 21, 2):
 # 		print("do you even listen anymore?")
 # 		break
 
+####################################### class practice ########################################
 # # print a square
 # width_count = 1
 # while width_count < 5:
 #     print(' *' * 5)
 #     width_count += 1
 
+# # coin counter
+# coins = -1
+# answer = 'yes'
+# while answer == 'yes':
+#     coins += 1
+#     print('you have %d coins' % coins)
+#     answer = input('do you want another? ')
+# print('bye!')
 
-# coin counter
-coins = -1
-answer = 'yes'
-while answer == 'yes':
-    coins += 1
-    print('you have %d coins' % coins)
-    answer = input('do you want another? ')
-print('bye!')
+# # centered triangle v1
+# triangleHeight = 4
+# count = 0
+# stars = '*'
 
+# while count < triangleHeight:
+#     spaces = triangleHeight - count
+#     print(' ' * spaces + stars)
+#     count += 1
+#     stars += '**'
+
+# centered triangle v2
+triangleHt = int(input('enter a number less than 14: '))
+count = 0
+stars = '*'
+
+while count < triangleHt:
+    spaces = triangleHt - count
+    print(' ' * spaces + stars)
+    count += 1
+    stars += '**'
