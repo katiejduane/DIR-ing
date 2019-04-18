@@ -155,6 +155,12 @@ def sum_even_fib():
 # print(is_palindrome('hannah'))
 # print(is_palindrome('jason'))
 
+def is_palindrome(string):
+    stripped = string.replace(" ", "")
+    print(stripped)
+    # return stripped == stripped[::-1]
+is_palindrome('hannah')
+
 # FREQUENCY --------------------------------->
 # def frequency(list, letter):
 #     count = 0
@@ -164,6 +170,9 @@ def sum_even_fib():
 #     return count
 
 # print(frequency(['b', 'u', 'm', 'b', 'l', 'e', 'b', 'e', 'e'], 'b'))
+
+# def frequency(collection, searchTerm):
+#     return collection.count(searchTerm)
 
 # MULTIPLY EVENS --------------------------------->
 # def multiply_even_numbers(list):
