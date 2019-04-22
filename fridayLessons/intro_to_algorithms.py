@@ -17,6 +17,7 @@
 # single_letter_count("HelLo World", "l") # 3
 
 #define single_letter_count below:
+from random import shuffle
 def single_letter_count(string, letter):
     pass
 
@@ -58,8 +59,20 @@ def num_jewels_in_stones(jewels, stones):
 # is_palindrome('robert') # False
 # is_palindrome('amanaplanacanalpanama') # True
 
-def is_palindrome(str):
-    pass
+# input_string = input("Enter a word: ")
+# def is_palindrome(str):
+#     lower_string = str.lower()
+#     start_counter = 0
+#     end_counter = len(lower_string)-1
+#     while start_counter < end_counter:
+#         if lower_string[start_counter] != lower_string[end_counter]:
+#             return False
+#         elif lower_string[start_counter] == lower_string[end_counter]:
+#             start_counter += 1
+#             end_counter -= 1
+#     return True
+
+# print(is_palindrome(input_string))
 
 
 # 5
@@ -151,17 +164,17 @@ def next_prime():
 
 
 # MULTIPLE LETTER COUNT --------------------------------->
-# def multiple_letter_count(str):
-#     letter_counter = {}
-#     for letter in str:
-#         if letter != " ":
-#             if letter not in letter_counter:
-#                 letter_counter[letter] = 1
-#             else:
-#                 letter_counter[letter] += 1
-#     return letter_counter
+def multiple_letter_count(str):
+    letter_counter = {}
+    for letter in str:
+        if letter != " ":
+            if letter not in letter_counter:
+                letter_counter[letter] = 1
+            else:
+                letter_counter[letter] += 1
+    return letter_counter
 
-# print(multiple_letter_count('spaghetti and meatballs'))
+print(multiple_letter_count('spaghetti and meatballs'))
 
 # def multiple_letter_count(string):
 #     return {letter: string.count(letter) for letter in string}
