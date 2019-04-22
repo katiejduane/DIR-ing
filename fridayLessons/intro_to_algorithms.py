@@ -1,5 +1,11 @@
 # Friday, April 19
 
+# Whiteboarding/Psuedocoding/talking through a problem/explaining your code/
+# coming up with solutions together!
+
+# Remember, we're all at different experience levels, so start with a couple of the 
+# "warm up" problems so everyone can participate; don't just jump on the last 3! :D
+
 # TRY to stay away from built-in methods like count() sort() replace() ord() etc, for now...
 
 # 1
@@ -183,11 +189,26 @@ def next_prime():
 # print(is_palindrome(test_string))
 # print(is_palindrome('jason'))
 
-# def is_palindrome(string):
-#     stripped = string.replace(" ", "")
-#     return stripped == stripped[::-1]
+# ----
 
-# is_palindrome(test_string)
+# input_string = input("enter a word: ")
+# def low_case(c):
+#     return c.lower()
+
+# def is_palindrome(str):
+#     lower_input_string = low_case(str)
+#     start = 0
+#     end = len(lower_input_string)-1
+#     while start < end:
+#         if str[start] != str[end]:
+#             return False
+#         elif str[start] == str[end]:
+#             start += 1
+#             end -= 1
+#     return True
+
+
+# print(is_palindrome(input_string))
 
 
 # FREQUENCY --------------------------------->
