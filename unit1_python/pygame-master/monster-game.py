@@ -20,7 +20,7 @@ def main():
 
     pygame.init()
     screen = pygame.display.set_mode((width, height))
-    pygame.display.set_caption('Sean\'s Monster Game')
+    pygame.display.set_caption('Monster Game')
     clock = pygame.time.Clock()
 
     # Load Images

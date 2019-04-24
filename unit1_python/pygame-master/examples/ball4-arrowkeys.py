@@ -35,13 +35,13 @@ def main():
             # Event handling
             if event.type == pygame.KEYDOWN:
                 if event.key == KEY_DOWN:
-                    ball.y += 5
+                    ball.y += 10
                 elif event.key == KEY_UP:
-                    ball.y -= 5
+                    ball.y -= 10
                 elif event.key == KEY_LEFT:
-                    ball.x -= 5
+                    ball.x -= 10
                 elif event.key == KEY_RIGHT:
-                    ball.x += 5
+                    ball.x += 10
             if event.type == pygame.QUIT:
                 stop_game = True
 
