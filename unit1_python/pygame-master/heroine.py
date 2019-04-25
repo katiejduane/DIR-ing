@@ -1,6 +1,7 @@
 from pygame.sprite import Sprite
 import pygame
 from character import Character
+from pygame.locals import *
 
 
 class Heroine(Character):
@@ -12,57 +13,50 @@ class Heroine(Character):
         self.bk_image = bk_image
         self.r_image = r_image
         self.l_image = l_image
-        self.move_down = False
-        self.move_up = False
-        self.move_left = False
-        self.move_right = False
 
     def move(self, direction, start = True):
-        if direction == "right":
-            self.move_right = start
-        if direction == "left":
-            self.move_left = start
-        if direction == "down":
-            self.move_down = start
-        if direction == "up":
-            self.move_up = start
+        pressed_keys = pygame.key.get_pressed()
+        if pressed_keys[K_UP]:
+            self.rect.move_ip(0, -5)
+        if pressed_keys[K_DOWN]:
+            self.rect.move_ip(0, 5)
+        if pressed_keys[K_LEFT]:
+            self.rect.move_ip(-5, 0)
+        if pressed_keys[K_RIGHT]:
+            self.rect.move_ip(5, 0)
 
-    def draw(self, w, h):
-        if self.move_right:
-            if self.x <= w - 64:
-                self.x += self.speed
-        elif self.move_left:
-            if self.x >= 32:
-                self.x -= self.speed
-        if self.move_down:
-            if self.y <= h - 64:
-                self.y += self.speed
-        elif self.move_up:
-            if self.y >= 32:
-                self.y -= self.speed
+        # Keep player on the screen
+        if self.rect.left < 0:
+            self.rect.left = 0
+        elif self.rect.right > 512:
+            self.rect.right = 512
+        if self.rect.top <= 0:
+            self.rect.top = 0
+        elif self.rect.bottom >= 480:
+            self.rect.bottom = 480
 
-    def collide_and_kill(self, width, enemy):
-        if enemy.x + width < self.x:
-            return False
-        elif self.x + width < enemy.x:
-            return False
-        elif enemy.y + width < self.y:
-            return False
-        elif self.y + width < enemy.y:
-            return False
-        else:
-            return True
+    # def draw(self, w, h):
+    #     if self.move_right:
+    #         if self.x <= w - 64:
+    #             self.x += self.speed
+    #     elif self.move_left:
+    #         if self.x >= 32:
+    #             self.x -= self.speed
+    #     if self.move_down:
+    #         if self.y <= h - 64:
+    #             self.y += self.speed
+    #     elif self.move_up:
+    #         if self.y >= 32:
+    #             self.y -= self.speed
 
-
-
-
-
-
-# class Hero(Character):
-#     def __init__(self, image, pos, x, y):
-#         super() .__init__(image, pos, x, y)
-#         self.move = [pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN]
-#         self.x = x
-#         self.y = y
-#         self.vx = 5
-#         self.vy = 5
+    # def collide_and_kill(self, width, enemy):
+    #     if enemy.x + width < self.x:
+    #         return False
+    #     elif self.x + width < enemy.x:
+    #         return False
+    #     elif enemy.y + width < self.y:
+    #         return False
+    #     elif self.y + width < enemy.y:
+    #         return False
+    #     else:
+    #         return True

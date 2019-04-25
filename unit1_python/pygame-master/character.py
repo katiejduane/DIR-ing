@@ -2,6 +2,7 @@ from pygame.sprite import Sprite
 import pygame
 
 
+
 class Character(Sprite):
     def __init__(self, main_img, x, y, speed):
         super(Character, self).__init__()

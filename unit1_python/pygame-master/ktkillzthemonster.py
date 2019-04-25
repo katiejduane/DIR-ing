@@ -1,39 +1,35 @@
 # Import pygame
 import pygame
 
-# Import my own classes
 # Import super class
 from character import Character
+
 # Import sub classes
 from heroine import Heroine
 from monster import Monster
 from goblin import Goblin
 
-# # Import Button
-# from button import Start_Button
-
 #Get group and groupcollide from the Sprite Module
-from pygame.sprite import Group, groupcollide
+from pygame.sprite import Group, spritecollide, spritecollideany
 
 
 #Keys
-KEY_UP = 273
-KEY_DOWN = 274
-KEY_LEFT = 276
-KEY_RIGHT = 275
+K_UP = 273
+K_DOWN = 274
+K_LEFT = 276
+K_RIGHT = 275
 
+heroine_alive = True
 
 
 def main():
-    width = 512
-    height = 480
-    blue_color = (97, 159, 182)
-
     #init pygame
     pygame.init()
+
+    # screen and size
+    width = 512
+    height = 480
     screen = pygame.display.set_mode((width, height))
-    pygame.display.set_caption('My Game')
-    clock = pygame.time.Clock()
 
     # Load Images
     background_image = pygame.image.load('images/background.png').convert_alpha()
@@ -44,79 +40,66 @@ def main():
     monster_image = pygame.image.load('images/monster.png').convert_alpha()
     goblin_image = pygame.image.load('images/goblin.png').convert_alpha()
 
-    # (self, fr_image, bk_image, r_image, l_image, x, y):
+    # Create characters
     la_heroina = Heroine(heroine_fr, heroine_fr, heroine_bk, heroine_r, heroine_l, 250, 250)
     monster = Monster(monster_image, 100, 100)
     goblin = Goblin(goblin_image, 400, 400)
 
-    heroines = Group()
-    heroines.add(la_heroina)
-    enemies = Group()
+   # Make groups
+    enemies = pygame.sprite.Group()
     enemies.add(monster, goblin)
+    all_sprites = pygame.sprite.Group()
+    all_sprites.add(la_heroina)
 
     # Game initialization
-    stop_game = False
-    while not stop_game:
-        # Draw things!!!
+    game_on = True
+    while game_on:
+        for event in pygame.event.get():
+            # Event handling
+            if event.type == pygame.QUIT:
+                game_on = False
 
-        # background
+
+        # Game logic
+
+        # Draw stuff
         screen.blit(background_image, [0, 0])
 
-        # heroine
-        la_heroina.render(screen)
-        la_heroina.draw(512, 480)
+        # la_heroina.render(screen)
+        # la_heroina.draw(512, 480)
+        pressed_keys = pygame.key.get_pressed()
+        la_heroina.move(pressed_keys)
 
-        # monster
         monster.render(screen)
         monster.update(width, height)
 
-        # goblin
         goblin.render(screen)
         goblin.update(width, height)
 
-        # kill
-        kill = groupcollide(heroines, enemies, False, True)
-        if kill:
-            print("kill")
+        enemies.update(width, height)
 
-        for event in pygame.event.get():
+        for entity in all_sprites:
+            screen.blit(entity.main_img, entity.rect)
 
-            # Event handling
-            if event.type == pygame.QUIT:
-                stop_game = True
+        # let the chase begin (monster chase the heroine, sorry, heroine)
+        if pygame.sprite.spritecollideany(la_heroina, enemies):
+            la_heroina.kill()
+            print("heroine: ", la_heroina.rect)
+            print("monster: ", monster.rect)
+            print("goblin: ", goblin.rect)
+            pygame.quit()
 
-            # Game logic
-            key = pygame.key.get_pressed()
-
-            if event.type == pygame.KEYDOWN:
-                print(event.key)
-                if event.key == 275:  # right arrow key number
-                    la_heroina.move("right")
-                elif event.key == 276:
-                    la_heroina.move("left")
-                elif event.key == 273:
-                    la_heroina.move("up")
-                elif event.key == 274:
-                    la_heroina.move("down")
-            elif event.type == pygame.KEYUP:  # the user released a key
-                if event.key == 275:
-                    la_heroina.move("right", False)
-                elif event.key == 276:
-                    la_heroina.move("left", False)
-                elif event.key == 273:
-                    la_heroina.move("up", False)
-                elif event.key == 274:
-                    la_heroina.move("down", False)
-                else:
-                    print(event.key)
-
+        # killz = pygame.sprite.spritecollide(la_heroina, enemies, True)
+        # if killz:
+        #     print('true')
 
         # Game display
-        pygame.display.update()
-
         pygame.display.flip()
 
     pygame.quit()
 
 if __name__ == '__main__':
     main()
+
+
+ 
