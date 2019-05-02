@@ -78,6 +78,7 @@ def main():
 
         enemies.update(width, height)
 
+
         for entity in all_sprites:
             screen.blit(entity.main_img, entity.rect)
 
