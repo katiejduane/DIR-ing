@@ -1,11 +1,15 @@
 # HTML AND CSS QUESTIONS: you MUST answer these! research/discuss in groups!
 
-# 1.
-# 2.
-# 3.
-# 4.
-# 5.
-# 6.
+# 1. Do all HTML tags have an end tag?
+# 2. What is a style sheet?
+# 3. How do you create a link that will connect to another web page when clicked?
+# 4. What are the differences between visibility hidden and display none?
+# 5. What are the differences between inline, block and inline-block?
+# 6. What are the differences between div and span?
+# 7. What is specificity? How do u calculate specificity?
+# 8. Describe z-index and how stacking context is formed
+# 9. Describe pseudo-elements and discuss what they are used for.
+# 10. What is the CSS display property and can you give a few examples of its use?
 
 
 # Algorithms --------------------------------------------->
