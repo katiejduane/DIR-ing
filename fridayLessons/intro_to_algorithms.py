@@ -3,6 +3,9 @@
 # Whiteboarding/Psuedocoding/talking through a problem/explaining your code/
 # coming up with solutions together!
 
+# Introduce MULTIPLE POINTERS PATTERN:
+# use it for solving the palindrome problem! -------->
+
 # Remember, we're all at different experience levels, so start with a couple of the 
 # "warm up" problems so everyone can participate; don't just jump on the last 3! :D
 
