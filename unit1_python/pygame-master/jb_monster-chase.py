@@ -134,7 +134,7 @@ class Monster(Character):
                 self.y -= self.speed 
         self.rect.x = self.x 
         self.rect.y = self.y
-        # pygame.time.delay(50)
+        pygame.time.delay(50)
     
     def kill(self):
         pygame.sprite.Sprite.kill(self)
