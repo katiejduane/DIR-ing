@@ -1,0 +1,12 @@
+1. What's the difference between let and const?
+2. What is the 'i' in a loop? (eg: for(let i = 0; i < 10; i++)) What happens to the 'i' during
+the loop execution?
+3. What are the different ways to get an element from the DOM?
+4. How do you get an element from an array at a specific index? 
+5. How can you convert a string ("4") into a number? Why or when would you do this?
+6. We have learned the 'click' event listener. What are three others (or MANY) that can be
+added to a DOM element?
+7. How do you create a DOM element using JS?
+8. How come we can use 'forEach' but not a 'for loop' on an HTML collection?
+9. How does 'this' work in JS? (this is a multidimensional question and we haven't covered it all yet!)
+10. Can you describe the main difference between a forEach loop and a .map() loop and why you would pick one versus the other?

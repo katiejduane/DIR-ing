@@ -1,5 +1,9 @@
 // What is Recursion?
 
+// Really helpful articles!!! -------------------------------------------------->
+//https://medium.freecodecamp.org/recursion-is-not-hard-858a48830d83
+//https://codeburst.io/learn-and-understand-recursion-in-javascript-b588218e87ea
+
 
 // {and what does: maxiumum call stack exceeded mean? what is the stack!?}
 
@@ -43,3 +47,5 @@ function factorial(num){
     return num * factorial(num - 1);
 }
 // console.log(factorial(4))
+
+
