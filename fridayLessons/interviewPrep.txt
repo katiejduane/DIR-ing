@@ -1,0 +1,33 @@
+PART ONE: Discuss these in groups!! I'd also advise writing down notes as I have been asked NEARLY ALL of these questions in the last few weeks. It is also encouraged to actually LOOK THESE UP and read before/while discussing in groups, as the answers can often be more involved than you think!
+
+-What is Big O notation, and why is it useful?
+-What is the DOM?
+-What is the event loop?
+-What is a closure?
+-What is the difference between MAP and FOREACH?
+-What are the differences between VAR, LET, CONST?
+-How does prototypal inheritance work, and how is it different from classical inheritance? (this is not a useful question IMO, but a lot of people like to ask it)
+-How does the keyword 'this' work?
+-What is event bubbling and how does it work? (this is also a bad question IMO, but a lot of people like to ask it too)
+-What is REST, and why do people use it?
+
+PART TWO: In groups, debug these problems:
+
+1. I want this code to log out "hey amy", but it logs out "hey arnold" - why?
+function greet(person) {
+  if (person == { name: 'amy' }) {
+    return 'hey amy'
+  } else {
+    return 'hey arnold'
+  }
+}
+greet({ name: 'amy' })
+
+2. I want this code to log out the numbers 0, 1, 2, 3 in that order, but it doesn’t do what I expect (this is a bug you run into once in a while, and some people love to ask about it in interviews).
+
+for (var i = 0; i < 4; i++) {
+  setTimeout(() => console.log(i), 0)
+}
+
+PART THREE: 2-3 algorithms, SELF-SELECTED from the linked article. You can choose easy/medium/hard; wherever you're comfortable. You may work on these in groups but you must WRITE YOUR OWN. You may choose something different than your group mates and that is fine. HAND WRITE YOUR SOLUTIONS ON PAPER FIRST. Then attempt them in your code editor.
+

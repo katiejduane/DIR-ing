@@ -1,5 +1,5 @@
 let students = ["Liz", "Brodie", "Reagan", "Tom", "Jack F", "Ben", "Jack M", "Evan",
-    "Thomas", "Igor", "RJ", "Pierson", "JC", "Angel", "Austin", "KC", "Danny", "Eli"]
+    "Thomas", "Igor", "RJ", "Pierson", "JC", "Angel", "Austin", "Danny", "Eli"]
 
 function getRandom(arr){
     return Math.floor(Math.random() * arr.length)
